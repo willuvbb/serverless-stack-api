@@ -1,0 +1,8 @@
+user Pool Id us-east-2_8WSBxRhzM
+user Pool ARN arn:aws:cognito-idp:us-east-2:458786752601:userpool/us-east-2_8WSBxRhzM
+app clien id: 5j5a36mefl90ej0562upplq8lk
+
+Identity pool ID
+us-east-2:36b76452-1e5b-44c0-a89c-ffdb0998a6ef
+Identity Pool ARN
+arn:aws:cognito-identity:us-east-2:458786752601:identitypool/us-east-2:36b76452-1e5b-44c0-a89c-ffdb0998a6ef
