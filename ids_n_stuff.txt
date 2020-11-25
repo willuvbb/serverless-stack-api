@@ -6,3 +6,10 @@ Identity pool ID
 us-east-2:36b76452-1e5b-44c0-a89c-ffdb0998a6ef
 Identity Pool ARN
 arn:aws:cognito-identity:us-east-2:458786752601:identitypool/us-east-2:36b76452-1e5b-44c0-a89c-ffdb0998a6ef
+
+stripe api keys
+publishable key:
+pk_test_51HrTHoK1ZU9xHQvdpKJToz4p27nLIK3lV2fnxImywTya7e32fREU3LDwrDe2NmCcZhFqjAfTwUC24bGg5eY8Basi007OJXs5YJ
+
+secret key:
+sk_test_51HrTHoK1ZU9xHQvdcAMRYpNcSWTK5HPMOLCY9krxXci92z5Nq9UINl4vZ9V10XVR4ccXJsVKxFEQw3N2OKGxUq7p001Cy2zRVe
