@@ -1,27 +1,32 @@
+import * as debug from "./debug-lib";
+
 export default function handler(lambda) {
-    return async function (event, context) {
-      let body, statusCode;
+  return async function (event, context) {
+    let body, statusCode;
 
-      try {
-        // Run the Lambda
-        body = await lambda(event, context);
-        statusCode = 200;
-      } catch (e) {
-        // Print out the full error
-        console.log(e);
+    // Start debugger
+    debug.init(event, context);
 
-        body = { error: e.message };
-        statusCode = 500;
-      }
+    try {
+      // Run the Lambda
+      body = await lambda(event, context);
+      statusCode = 200;
+    } catch (e) {
+      // Print debug messages
+      debug.flush(e);
 
-      // Return HTTP response
-      return {
-        statusCode,
-        body: JSON.stringify(body),
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials": true,
-        },
-      };
+      body = { error: e.message };
+      statusCode = 500;
+    }
+
+    // Return HTTP response
+    return {
+      statusCode,
+      body: JSON.stringify(body),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
+      },
     };
-  }
+  };
+}

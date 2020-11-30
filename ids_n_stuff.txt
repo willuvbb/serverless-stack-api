@@ -13,3 +13,136 @@ pk_test_51HrTHoK1ZU9xHQvdpKJToz4p27nLIK3lV2fnxImywTya7e32fREU3LDwrDe2NmCcZhFqjAf
 
 secret key:
 sk_test_51HrTHoK1ZU9xHQvdcAMRYpNcSWTK5HPMOLCY9krxXci92z5Nq9UINl4vZ9V10XVR4ccXJsVKxFEQw3N2OKGxUq7p001Cy2zRVe
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With SEED/automatic deployment via code, CI/CD...
+INFO: Stacks output:
+Stack dev-notes-infra-dynamodb
+  Status: Deployed
+  Outputs:
+    TableName: dev-notes-infra-dynamodb-TableCD117FA1-YVBRFLKG7DPD
+    TableArn: arn:aws:dynamodb:us-east-2:458786752601:table/dev-notes-infra-dynamodb-TableCD117FA1-YVBRFLKG7DPD
+  Exports:
+    dev-notes-infra-TableName: dev-notes-infra-dynamodb-TableCD117FA1-YVBRFLKG7DPD
+    dev-notes-infra-TableArn: arn:aws:dynamodb:us-east-2:458786752601:table/dev-notes-infra-dynamodb-TableCD117FA1-YVBRFLKG7DPD
+Stack dev-notes-infra-s3
+  Status: Deployed
+  Outputs:
+    AttachmentsBucketName: dev-notes-infra-s3-uploads4f6eb0fd-1uep0tm4rko5d
+    ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::dev-notes-infra-s3-uploads4f6eb0fd-1uep0tm4rko5d
+  Exports:
+    dev-notes-infra-s3:ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::dev-notes-infra-s3-uploads4f6eb0fd-1uep0tm4rko5d
+Stack dev-notes-infra-cognito
+  Status: Deployed
+  Outputs:
+    AuthenticatedRoleName: dev-notes-infra-cognito-CognitoAuthRoleCognitoDefa-1RJ7R07WC5BS8
+    UserPoolClientId: 7oe5d0cib1tmenqgvntk0u1b2i
+    UserPoolId: us-east-2_nJdp3veaY
+    IdentityPoolId: us-east-2:22ed2bb6-aac4-4a96-b209-07e97f0c0cd9
+  Exports:
+    dev-notes-infra-CognitoAuthRole: dev-notes-infra-cognito-CognitoAuthRoleCognitoDefa-1RJ7R07WC5BS8
+
+
+
+$ serverless info --verbose --stage dev
+2.22 s
+Serverless: DOTENV: Could not find .env file.
+Service Information
+service: notes-api
+stage: dev
+region: us-east-2
+stack: notes-api-dev
+resources: 44
+api keys:
+  None
+endpoints:
+  POST - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/notes
+  GET - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  GET - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/notes
+  PUT - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  DELETE - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  POST - https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev/billing
+functions:
+  create: notes-api-dev-create
+  get: notes-api-dev-get
+  list: notes-api-dev-list
+  update: notes-api-dev-update
+  delete: notes-api-dev-delete
+  billing: notes-api-dev-billing
+layers:
+  None
+Stack Outputs
+DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-delete:2
+CreateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-create:2
+GetLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-get:2
+UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-update:2
+BillingLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-billing:2
+ListLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-dev-list:2
+ServiceEndpoint: https://36wnm0ovbf.execute-api.us-east-2.amazonaws.com/dev
+ServerlessDeploymentBucketName: notes-api-dev-serverlessdeploymentbucket-c511l9hbvt47
+
+
+
+INFO: Stacks output:
+Stack prod-notes-infra-dynamodb
+  Status: Deployed
+  Outputs:
+    TableName: prod-notes-infra-dynamodb-TableCD117FA1-1EG48ISED58JR
+    TableArn: arn:aws:dynamodb:us-east-2:458786752601:table/prod-notes-infra-dynamodb-TableCD117FA1-1EG48ISED58JR
+  Exports:
+    prod-notes-infra-TableName: prod-notes-infra-dynamodb-TableCD117FA1-1EG48ISED58JR
+    prod-notes-infra-TableArn: arn:aws:dynamodb:us-east-2:458786752601:table/prod-notes-infra-dynamodb-TableCD117FA1-1EG48ISED58JR
+Stack prod-notes-infra-s3
+  Status: Deployed
+  Outputs:
+    AttachmentsBucketName: prod-notes-infra-s3-uploads4f6eb0fd-1nneykwkaflnu
+    ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::prod-notes-infra-s3-uploads4f6eb0fd-1nneykwkaflnu
+  Exports:
+    prod-notes-infra-s3:ExportsOutputFnGetAttUploads4F6EB0FDArn5513CBEA: arn:aws:s3:::prod-notes-infra-s3-uploads4f6eb0fd-1nneykwkaflnu
+Stack prod-notes-infra-cognito
+  Status: Deployed
+  Outputs:
+    AuthenticatedRoleName: prod-notes-infra-cognito-CognitoAuthRoleCognitoDef-32C00SZRO06J
+    UserPoolClientId: dbd76cb76koeqpfi4cb9lnnhh
+    UserPoolId: us-east-2_mPAyAPyjy
+    IdentityPoolId: us-east-2:528e3d1a-717f-404e-b4c9-d6996f65a215
+  Exports:
+    prod-notes-infra-CognitoAuthRole: prod-notes-infra-cognito-CognitoAuthRoleCognitoDef-32C00SZRO06J
+
+$ serverless info --verbose --stage prod
+2.16 s
+Serverless: DOTENV: Could not find .env file.
+Service Information
+service: notes-api
+stage: prod
+region: us-east-2
+stack: notes-api-prod
+resources: 44
+api keys:
+  None
+endpoints:
+  POST - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/notes
+  GET - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  GET - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/notes
+  PUT - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  DELETE - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  POST - https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod/billing
+functions:
+  create: notes-api-prod-create
+  get: notes-api-prod-get
+  list: notes-api-prod-list
+  update: notes-api-prod-update
+  delete: notes-api-prod-delete
+  billing: notes-api-prod-billing
+layers:
+  None
+Stack Outputs
+DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-delete:5
+CreateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-create:5
+GetLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-get:5
+UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-update:5
+BillingLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-billing:3
+ListLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:458786752601:function:notes-api-prod-list:5
+ServiceEndpoint: https://29vx49mmma.execute-api.us-east-2.amazonaws.com/prod
+ServerlessDeploymentBucketName: notes-api-prod-serverlessdeploymentbucket-zcwldrmzdy8e
